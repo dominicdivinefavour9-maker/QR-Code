@@ -1,74 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background-color: hsl(212, 45%, 89%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
+  background-color: #d5e1ef;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
 }
 
 .card {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  width: 200px;
-  padding: 20px;
-  text-align: center;
-}
-
-.qr-area {
-  background-color: hsl(215, 52%, 29%); /* light blue background */
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  padding-left: 16%;
-  padding-right: 16%;
-}
-
-.qr-area img {
-  width: 100%;
-  height: 100%;
+  background: white;
   border-radius: 20px;
-  display: block;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+
+  /* Mobile first – matches your phone screenshot */
+  width: 100%;
+  max-width: 320px;
+  padding: 16px;
 }
 
-.card h2 {
-  color: hsl(218, 44%, 22%);
-  font-size: 18px;
-  margin-bottom: 15px;
+/* Desktop version – matches official Frontend Mentor design */
+@media (min-width: 500px) {
+  .card {
+    max-width: 400px;
+    padding: 20px;
+  }
 }
 
-.card p {
-  color: hsl(220, 15%, 55%);
+.qr-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #3685ff, #2c7bfa);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.qr-code {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88%;
+  height: 88%;
+  background-color: white;
+  background-image: url('image-qr-code.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.text {
+  padding: 28px 12px 10px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f314f;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+p {
   font-size: 15px;
-}
-@media (max-width: 480px) {
-  .card {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .card h2 {
-    font-size: 16px;
-  }
-
-  .card p {
-    font-size: 14px;
-  }
+  color: #8b9bb4;
+  line-height: 1.4;
+  padding: 0 10px;
 }
 
-/* Medium screens (tablets) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .card {
-    width: 400px;
-  }
+/* Optional footer */
+.attribution {
+  position: fixed;
+  bottom: 15px;
+  font-size: 12px;
+  color: #68707d;
+  text-align: center;
+  width: 100%;
 }
 
-/* Large screens (desktop and above) */
-@media (min-width: 769px) {
-  .card {
-    width: 350px;
-  }
+.attribution a {
+  color: #3e52a3;
+  text-decoration: none;
 }
-
